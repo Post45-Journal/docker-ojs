@@ -1,4 +1,4 @@
-FROM alpine:3.19
+FROM alpine:3.18
 
 LABEL maintainer="Public Knowledge Project <marc.bria@gmail.com>"
 
@@ -82,7 +82,7 @@ RUN set -xe \
 	&& apk add --no-cache --virtual .build-deps $BUILDERS \
 	&& apk add --no-cache $PACKAGES \
 	&& apk add --no-cache $PHP_EXTENSIONS \
-        && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.12/community/ gnu-libiconv=1.15-r2 \
+        && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.18/community/ gnu-libiconv=1.17-r1 \
 # Building OJS:
       # Configure and download code from git
 	&& git config --global url.https://.insteadOf git:// \

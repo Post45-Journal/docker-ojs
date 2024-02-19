@@ -24,7 +24,7 @@
 # For more information on the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # For more samples to get started with GitHub Action workflows to deploy to Azure: https://github.com/Azure/actions-workflow-samples
 
-name: Build and deploy a container to an Azure Web App
+name: Build and deploy OJS container to an Azure Web App
 
 env:
   AZURE_WEBAPP_NAME: post45-submissions-docker  # set this to the name of your Azure Web App
@@ -44,11 +44,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Download OJS Config File
-        run: |
-          source .env 
-          wget "https://github.com/pkp/ojs/raw/${OJS_VERSION}/config.TEMPLATE.inc.php" -O ./volumes/config/ojs.config.inc.php
-          # to add: customize installation based on .env file
+      # - name: Download OJS Config File
+      #   run: |
+      #     source .env 
+      #     wget "https://github.com/pkp/ojs/raw/${OJS_VERSION}/config.TEMPLATE.inc.php" -O ./volumes/config/ojs.config.inc.php
+      #     # to add: customize installation based on .env file
           
       # Need to build the image not from the current repo but from a Dockerfile
 

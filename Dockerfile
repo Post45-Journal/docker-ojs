@@ -132,7 +132,7 @@ COPY ["sshd_config", "entrypoint.sh", "./"]
 COPY sshd_config /etc/ssh/
 RUN apk add openssh \
        && echo "root:Docker!" | chpasswd \
-                     && chmod +x //usr/src/app/entrypoint.sh \
+                     && chmod +x entrypoint.sh \
                      && cd /etc/ssh/ \
                      && ssh-keygen -A
 
